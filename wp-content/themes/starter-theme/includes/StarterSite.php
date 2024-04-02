@@ -26,7 +26,7 @@ class StarterSite extends Site {
 	 * This is where you can register custom post types.
 	 */
 	public function register_post_types() {
-
+		include_once 'post-types/team.php';
 	}
 
 	/**
