@@ -40,9 +40,7 @@ class StarterSite extends Site {
 	 * @param string $context context['this'] Being the Twig's {{ this }}.
 	 */
 	public function add_to_context( $context ) {
-		$context['foo']   = 'bar';
-		$context['stuff'] = 'I am a value set in your functions.php file';
-		$context['notes'] = 'These values are available everytime you call Timber::context();';
+		$context['options'] = get_fields('option');
 		$context['menu']  = Timber::get_menu();
 		$context['site']  = $this;
 
