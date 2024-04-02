@@ -17,6 +17,8 @@ class StarterSite extends Site {
 
 		add_action( 'wp_enqueue_scripts', [ $this, 'assets' ] );
 
+		add_action( 'init', [ $this, 'disable_emojis' ] );
+
 		parent::__construct();
 	}
 
@@ -65,38 +67,6 @@ class StarterSite extends Site {
 		 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
 		 */
 		add_theme_support( 'post-thumbnails' );
-
-		/*
-		 * Switch default core markup for search form, comment form, and comments
-		 * to output valid HTML5.
-		 */
-		add_theme_support(
-			'html5',
-			array(
-				'comment-form',
-				'comment-list',
-				'gallery',
-				'caption',
-			)
-		);
-
-		/*
-		 * Enable support for Post Formats.
-		 *
-		 * See: https://codex.wordpress.org/Post_Formats
-		 */
-		add_theme_support(
-			'post-formats',
-			array(
-				'aside',
-				'image',
-				'video',
-				'quote',
-				'link',
-				'gallery',
-				'audio',
-			)
-		);
 
 		add_theme_support( 'menus' );
 	}
@@ -152,5 +122,16 @@ class StarterSite extends Site {
 
 		// Styles
 		wp_enqueue_style( 'gigaverse-app', get_theme_file_uri( '/public/css/app.css' ) );
+	}
+
+	public function disable_emojis() {
+		remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
+		remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
+		remove_action( 'wp_print_styles', 'print_emoji_styles' );
+		remove_filter( 'the_content_feed', 'wp_staticize_emoji' );
+		remove_action( 'admin_print_styles', 'print_emoji_styles' );
+		remove_filter( 'comment_text_rss', 'wp_staticize_emoji' );
+		remove_filter( 'wp_mail', 'wp_staticize_emoji_for_email' );
+		add_filter( 'tiny_mce_plugins', 'disable_emojis_tinymce' );
 	}
 }
