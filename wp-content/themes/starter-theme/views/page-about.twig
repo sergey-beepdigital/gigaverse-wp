@@ -1,0 +1,168 @@
+{% extends "base.twig" %}
+
+{% block content %}
+
+    <div class="minheight">
+        <div class="image_const">
+            <img class="mobilebg" src="/images/header_bg_mobile.png">
+            <img class="desktopbg " src="/images/header_bg_desktop.jpg">
+
+            {% include 'partial/header.twig' %}
+
+            <div class="header_pad"></div>
+            <section class="header_images">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12  text-center pt-10 md-pt-22">
+                            <h1 class="text80 black">Meet the <span class="giga-pink">team</span>
+                            </h1>
+                        </div>
+                        <div class="col-12 col-lg-10 offset-lg-1 text-center text32 pt-5 md-pt-8 pb-10 md-pb-20">We're a diverse team of technologists, designers, artists and creators building a community driven platform for live content.</div>
+
+                    </div>
+                </div>
+            </section>
+        </div>
+        <div id="filters" class="button-group">  <a class="button is-checked" data-filter="*">All</a>
+            <br>
+            <a class="button" data-filter=".core">Team</a>
+            <br>
+            <a class="button" data-filter=".board">Board</a>
+            <br>
+            <a class="button" data-filter=".advisor">Advisors</a>
+        </div>
+        <div class="container nopad">
+            <div class="row">
+                <div class="col-12">
+                    <div class="team-members">
+                        <div class="team-member core">
+                            <img src="/images/team_omer_luzzatti.jpg"/>
+                            <div class="name text24 bold pt-2">Omer Luzzatti</div>
+                            <div class="role text16 pt-1">Founder, CEO</div>
+                            <div class="category">Team</div>
+                        </div>
+                        <div class="team-member core">
+                            <img src="/images/team_danny_anders.jpg"/>
+                            <div class="name text24 bold pt-2">Danny Anders</div>
+                            <div class="role text16 pt-1">Head of Product</div>
+                            <div class="category">Team</div>
+                        </div>
+                        <div class="team-member core">
+                            <img src="/images/team_niklas_enbom.jpg"/>
+                            <div class="name text24 bold pt-2">Niklas Enbom</div>
+                            <div class="role text16 pt-1">Founder, Head of R&D</div>
+                            <div class="category">Team</div>
+                        </div>
+                        <div class="team-member core">
+                            <img src="/images/team_aviad_rozenhek.jpg"/>
+                            <div class="name text24 bold pt-2">Aviad Rozenheke</div>
+                            <div class="role text16 pt-1">Head of AI/ML</div>
+                            <div class="category">Team</div>
+                        </div>
+                        <div class="team-member core">
+                            <img src="/images/team_yashvi_tibrewal.jpg"/>
+                            <div class="name text24 bold pt-2">Yashvi Tibrewal</div>
+                            <div class="role text16 pt-1">Head of Product Marketing</div>
+                            <div class="category">Team</div>
+                        </div>
+                        <div class="team-member board">
+                            <img src="/images/team_matt_sorum.jpg"/>
+                            <div class="name text24 bold pt-2">Matt Sorum</div>
+                            <div class="role text16 pt-1">Co-Founder & Board</div>
+                            <div class="category">Board</div>
+                        </div>
+                        <div class="team-member board">
+                            <img src="/images/team_robert_scott.jpg"/>
+                            <div class="name text24 bold pt-2">Robert Scott</div>
+                            <div class="role text16 pt-1">Co-Founder & Board</div>
+                            <div class="category">Board</div>
+                        </div>
+                        <div class="team-member board">
+                            <img src="/images/team_mark_shedletsky.jpg"/>
+                            <div class="name text24 bold pt-2">Mark Shedletsky</div>
+                            <div class="role text16 pt-1">Co-Founder & Board</div>
+                            <div class="category">Board</div>
+                        </div>
+                        <div class="team-member board">
+                            <img src="/images/team_bill_tai.jpg"/>
+                            <div class="name text24 bold pt-2">Bill Tai</div>
+                            <div class="role text16 pt-1">Founding Investor & Board</div>
+                            <div class="category">Board</div>
+                        </div>
+                        <div class="team-member board">
+                            <img src="/images/team_oded_gal.jpg"/>
+                            <div class="name text24 bold pt-2">Oded Gal</div>
+                            <div class="role text16 pt-1">Board</div>
+                            <div class="category">Board</div>
+                        </div>
+                        <div class="team-member board">
+                            <img src="/images/team_erin_mcpherson.jpg"/>
+                            <div class="name text24 bold pt-2">Erin McPherson</div>
+                            <div class="role text16 pt-1">Board</div>
+                            <div class="category">Board</div>
+                        </div>
+                        <div class="team-member advisor">
+                            <img src="/images/team_jerry_steinberg.jpg"/>
+                            <div class="name text24 bold pt-2">Jerry Steinberg</div>
+                            <div class="role text16 pt-1">Sports</div>
+                            <div class="category">Advisors</div>
+                        </div>
+                        <div class="team-member advisor">
+                            <img src="/images/team_david_unger.jpg"/>
+                            <div class="name text24 bold pt-2">David Unger</div>
+                            <div class="role text16 pt-1">Entertainment</div>
+                            <div class="category">Advisors</div>
+                        </div>
+                        <div class="team-member advisor">
+                            <img src="/images/team_anne_buovolo.jpg"/>
+                            <div class="name text24 bold pt-2">Anne Buovolo</div>
+                            <div class="role text16 pt-1">Sponsorship</div>
+                            <div class="category">Advisors</div>
+                        </div>
+                        <div class="team-member advisor">
+                            <img src="/images/team_giles_vincent.jpg"/>
+                            <div class="name text24 bold pt-2">Giles Vincent</div>
+                            <div class="role text16 pt-1">Creative</div>
+                            <div class="category">Advisors</div>
+                        </div>
+                        <div class="team-member advisor">
+                            <img src="/images/team_craig_sparkes.jpg"/>
+                            <div class="name text24 bold pt-2">Craig Sparkes</div>
+                            <div class="role text16 pt-1">Technical</div>
+                            <div class="category">Advisors</div>
+                        </div>
+                        <div class="team-member advisor">
+                            <img src="/images/team_maria_serafica.jpg"/>
+                            <div class="name text24 bold pt-2">Maria Serafica</div>
+                            <div class="role text16 pt-1">Financial</div>
+                            <div class="category">Advisors</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-12 pt-20 pb-2 md-pb-10">
+                    <h2 class="text40 bold text-center pb-4">Our investors</h2>
+                </div>
+            </div>
+            <div class="row text-center">
+                <div class="col-12 logos">
+                    <a target="_blank" href="https://www.actaiventures.com"><img src="/images/investor_actai.png"/></a>
+                    <a target="_blank" href="https://www.carbideventures.com"><img src="/images/investor_carbide.png"/></a>
+                    <a target="_blank" href="https://nimacap.com"><img src="/images/investor_nima.png"/></a>
+                    <a target="_blank" href="https://www.sanghacapital.co"><img src="/images/investor_sangha.png"/></a>
+                </div>
+            </div>
+        </div>
+        <div class="topscroll"></div>
+    </div>
+
+    {% include 'partial/footer.twig' with {
+        css_class : 'pt-20 relative',
+        center: true
+    } %}
+
+{% endblock %}
