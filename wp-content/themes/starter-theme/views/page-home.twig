@@ -13,9 +13,11 @@
             <div class="container">
                 <div class="row">
                     <div class="col-12  text-center pt-10 md-pt-22">
-                        <h1 class="text80 black">Bring your community to life <span class="giga-pink">with the help of AI</span></h1>
+                        <h1 class="text80 black">{{ options.home_title }}</h1>
                     </div>
-                    <div class="col-12 text-center text32 pt-5 md-pt-8 pb-4 md-pb-20">A universe of gigs on a <span class="bold">truly</span> interactive live platform. </div>
+                    {% if options.home_subtitle %}
+                        <div class="col-12 text-center text32 pt-5 md-pt-8 pb-4 md-pb-20">{{ options.home_subtitle }}</div>
+                    {% endif %}
                     <div class="col-12 md-pt-5">
                         <div class="imageframe_parallax">
                             <img class="base" src="{{ theme.uri }}/public/images/header_images_bg.png">
