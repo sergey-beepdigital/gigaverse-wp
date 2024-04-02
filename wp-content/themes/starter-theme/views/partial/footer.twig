@@ -1,8 +1,16 @@
+{% set menuItems = fn('wp_get_nav_menu_items','copyright-nav') %}
+
 <footer class="{{ css_class }}">
     <div class="container">
         <div class="row">
-            <div class="col-12 {{ center ? 'text-center' : 'col-md-7 offset-md-5 col-lg-6 offset-lg-6' }}"> &copy; {{"now"|date('Y')}} Gigaverse. All rights reserved. | <a href="/privacy_policy.html">Privacy Policy</a>
-                <a href="/tos.html">Terms & Conditions</a>
+            <div class="col-12 {{ center ? 'text-center' : 'col-md-7 offset-md-5 col-lg-6 offset-lg-6' }}">
+                &copy; {{"now"|date('Y')}} Gigaverse. All rights reserved.
+                {% if menuItems %}
+                    |
+                    {% for item in menuItems %}
+                        <a href="{{ item.url }}">{{ item.title }}</a>
+                    {% endfor %}
+                {% endif %}
             </div>
         </div>
     </div>

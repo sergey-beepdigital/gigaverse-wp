@@ -1,3 +1,5 @@
+{% set menuItems = fn('wp_get_nav_menu_items','main-nav') %}
+
 <header>
     <div class="container">
         <div class="row">
@@ -10,7 +12,11 @@
                 </a>
             </div>
             <div class="col">
-                <a class="header_link" href="{{ fn('get_the_permalink',options.about_page) }}">About Us</a>
+                {% if menuItems %}
+                    {% for item in menuItems %}
+                        <a class="header_link" href="{{ item.url }}">{{ item.title }}</a>
+                    {% endfor %}
+                {% endif %}
                 <a class="btn desktop formbtn" href="#form">Join the waitlist</a>
                 <a class="mobile formbtn" href="#form">Waitlist</a>
             </div>
