@@ -19,6 +19,8 @@ class StarterSite extends Site {
 
 		add_action( 'init', [ $this, 'disable_emojis' ] );
 
+		add_action( 'admin_menu', [ $this, 'remove_menus' ] );
+
 		parent::__construct();
 	}
 
@@ -132,5 +134,9 @@ class StarterSite extends Site {
 		remove_action( 'admin_print_styles', 'print_emoji_styles' );
 		remove_filter( 'comment_text_rss', 'wp_staticize_emoji' );
 		remove_filter( 'wp_mail', 'wp_staticize_emoji_for_email' );
+	}
+
+	public function remove_menus() {
+		remove_menu_page( 'edit-comments.php' );
 	}
 }
