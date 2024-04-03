@@ -12,14 +12,17 @@
                 </a>
             </div>
             <div class="col">
-                {% if menuItems %}
-                    {% for item in menuItems %}
-                        <a class="header_link" href="{{ item.url }}">{{ item.title }}</a>
-                    {% endfor %}
+                {% if not hide_menu %}
+                    {% if menuItems %}
+                        {% for item in menuItems %}
+                            <a class="header_link" href="{{ item.url }}">{{ item.title }}</a>
+                        {% endfor %}
+                    {% endif %}
+                    <a class="btn desktop formbtn" href="#form">Join the waitlist</a>
+                    <a class="mobile formbtn" href="#form">Waitlist</a>
                 {% endif %}
-                <a class="btn desktop formbtn" href="#form">Join the waitlist</a>
-                <a class="mobile formbtn" href="#form">Waitlist</a>
             </div>
         </div>
     </div>
 </header>
+<div class="header_pad"></div>
