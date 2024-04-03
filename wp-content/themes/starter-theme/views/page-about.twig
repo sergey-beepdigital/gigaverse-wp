@@ -23,125 +23,37 @@
                 </div>
             </section>
         </div>
-        <div id="filters" class="button-group">  <a class="button is-checked" data-filter="*">All</a>
-            <br>
-            <a class="button" data-filter=".core">Team</a>
-            <br>
-            <a class="button" data-filter=".board">Board</a>
-            <br>
-            <a class="button" data-filter=".advisor">Advisors</a>
-        </div>
-        <div class="container nopad">
-            <div class="row">
-                <div class="col-12">
-                    <div class="team-members">
-                        <div class="team-member core">
-                            <img src="/images/team_omer_luzzatti.jpg"/>
-                            <div class="name text24 bold pt-2">Omer Luzzatti</div>
-                            <div class="role text16 pt-1">Founder, CEO</div>
-                            <div class="category">Team</div>
-                        </div>
-                        <div class="team-member core">
-                            <img src="/images/team_danny_anders.jpg"/>
-                            <div class="name text24 bold pt-2">Danny Anders</div>
-                            <div class="role text16 pt-1">Head of Product</div>
-                            <div class="category">Team</div>
-                        </div>
-                        <div class="team-member core">
-                            <img src="/images/team_niklas_enbom.jpg"/>
-                            <div class="name text24 bold pt-2">Niklas Enbom</div>
-                            <div class="role text16 pt-1">Founder, Head of R&D</div>
-                            <div class="category">Team</div>
-                        </div>
-                        <div class="team-member core">
-                            <img src="/images/team_aviad_rozenhek.jpg"/>
-                            <div class="name text24 bold pt-2">Aviad Rozenheke</div>
-                            <div class="role text16 pt-1">Head of AI/ML</div>
-                            <div class="category">Team</div>
-                        </div>
-                        <div class="team-member core">
-                            <img src="/images/team_yashvi_tibrewal.jpg"/>
-                            <div class="name text24 bold pt-2">Yashvi Tibrewal</div>
-                            <div class="role text16 pt-1">Head of Product Marketing</div>
-                            <div class="category">Team</div>
-                        </div>
-                        <div class="team-member board">
-                            <img src="/images/team_matt_sorum.jpg"/>
-                            <div class="name text24 bold pt-2">Matt Sorum</div>
-                            <div class="role text16 pt-1">Co-Founder & Board</div>
-                            <div class="category">Board</div>
-                        </div>
-                        <div class="team-member board">
-                            <img src="/images/team_robert_scott.jpg"/>
-                            <div class="name text24 bold pt-2">Robert Scott</div>
-                            <div class="role text16 pt-1">Co-Founder & Board</div>
-                            <div class="category">Board</div>
-                        </div>
-                        <div class="team-member board">
-                            <img src="/images/team_mark_shedletsky.jpg"/>
-                            <div class="name text24 bold pt-2">Mark Shedletsky</div>
-                            <div class="role text16 pt-1">Co-Founder & Board</div>
-                            <div class="category">Board</div>
-                        </div>
-                        <div class="team-member board">
-                            <img src="/images/team_bill_tai.jpg"/>
-                            <div class="name text24 bold pt-2">Bill Tai</div>
-                            <div class="role text16 pt-1">Founding Investor & Board</div>
-                            <div class="category">Board</div>
-                        </div>
-                        <div class="team-member board">
-                            <img src="/images/team_oded_gal.jpg"/>
-                            <div class="name text24 bold pt-2">Oded Gal</div>
-                            <div class="role text16 pt-1">Board</div>
-                            <div class="category">Board</div>
-                        </div>
-                        <div class="team-member board">
-                            <img src="/images/team_erin_mcpherson.jpg"/>
-                            <div class="name text24 bold pt-2">Erin McPherson</div>
-                            <div class="role text16 pt-1">Board</div>
-                            <div class="category">Board</div>
-                        </div>
-                        <div class="team-member advisor">
-                            <img src="/images/team_jerry_steinberg.jpg"/>
-                            <div class="name text24 bold pt-2">Jerry Steinberg</div>
-                            <div class="role text16 pt-1">Sports</div>
-                            <div class="category">Advisors</div>
-                        </div>
-                        <div class="team-member advisor">
-                            <img src="/images/team_david_unger.jpg"/>
-                            <div class="name text24 bold pt-2">David Unger</div>
-                            <div class="role text16 pt-1">Entertainment</div>
-                            <div class="category">Advisors</div>
-                        </div>
-                        <div class="team-member advisor">
-                            <img src="/images/team_anne_buovolo.jpg"/>
-                            <div class="name text24 bold pt-2">Anne Buovolo</div>
-                            <div class="role text16 pt-1">Sponsorship</div>
-                            <div class="category">Advisors</div>
-                        </div>
-                        <div class="team-member advisor">
-                            <img src="/images/team_giles_vincent.jpg"/>
-                            <div class="name text24 bold pt-2">Giles Vincent</div>
-                            <div class="role text16 pt-1">Creative</div>
-                            <div class="category">Advisors</div>
-                        </div>
-                        <div class="team-member advisor">
-                            <img src="/images/team_craig_sparkes.jpg"/>
-                            <div class="name text24 bold pt-2">Craig Sparkes</div>
-                            <div class="role text16 pt-1">Technical</div>
-                            <div class="category">Advisors</div>
-                        </div>
-                        <div class="team-member advisor">
-                            <img src="/images/team_maria_serafica.jpg"/>
-                            <div class="name text24 bold pt-2">Maria Serafica</div>
-                            <div class="role text16 pt-1">Financial</div>
-                            <div class="category">Advisors</div>
+        {% if team_categories %}
+            <div id="filters" class="button-group">  <a class="button is-checked" data-filter="*">All</a>
+                {% for cat in team_categories %}
+                <br>
+                <a class="button" data-filter=".{{ cat.slug }}">{{ cat.name }}</a>
+                {% endfor %}
+            </div>
+        {% endif %}
+        {% if team_list %}
+            <div class="container nopad">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="team-members">
+
+                            {% for member in team_list %}
+
+                                <div class="team-member {{ member.terms('gv_team_group') | join(' ') | lower }}">
+                                    <img src="{{ member.thumbnail.src }}"/>
+                                    <div class="name text24 bold pt-2">{{ member.title }}</div>
+                                    <div class="role text16 pt-1">{{ member.member_job_title }}</div>
+                                    <div class="category">{{ member.terms('gv_team_group') | join(', ') }}</div>
+                                </div>
+
+                            {% endfor %}
+
                         </div>
                     </div>
                 </div>
-            </div>
 
-        </div>
+            </div>
+        {% endif %}
         <div class="container">
             <div class="row">
                 <div class="col-12 pt-20 pb-2 md-pb-10">
