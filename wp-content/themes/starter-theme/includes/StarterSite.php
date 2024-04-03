@@ -20,6 +20,7 @@ class StarterSite extends Site {
 		add_action( 'init', [ $this, 'disable_emojis' ] );
 
 		add_action( 'admin_menu', [ $this, 'remove_menus' ] );
+		add_action( 'wp_before_admin_bar_render', [ $this, 'beep_admin_logo' ] );
 
 		parent::__construct();
 	}
@@ -138,5 +139,20 @@ class StarterSite extends Site {
 
 	public function remove_menus() {
 		remove_menu_page( 'edit-comments.php' );
+	}
+
+	public function beep_admin_logo() {
+		echo '<style>
+		#wpadminbar #wp-admin-bar-wp-logo > .ab-item{
+			background-color:#3aa1fa;
+			background-image: url(' . get_theme_file_uri('/static/logo.svg') . ') !important;
+			background-size: 30px;
+			background-repeat: no-repeat;
+			background-position: center;
+		}
+		#wpadminbar #wp-admin-bar-wp-logo > .ab-item .ab-icon:before {
+			color:rgba(0, 0, 0, 0);
+		}
+	</style>';
 	}
 }
