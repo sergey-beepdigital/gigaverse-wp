@@ -17,10 +17,47 @@ class StarterSite extends Site {
 
 		add_action( 'wp_enqueue_scripts', [ $this, 'assets' ] );
 
+		// remove emoji support
 		add_action( 'init', [ $this, 'disable_emojis' ] );
 
+		// remove comments menu item
 		add_action( 'admin_menu', [ $this, 'remove_menus' ] );
+
+		// set branding
 		add_action( 'wp_before_admin_bar_render', [ $this, 'beep_admin_logo' ] );
+
+		// remove RSS feeds, show homepage
+		add_action( 'do_feed', [ $this, 'disable_feeds' ], - 1 );
+		add_action( 'do_feed_rdf', [ $this, 'disable_feeds' ], - 1 );
+		add_action( 'do_feed_rss', [ $this, 'disable_feeds' ], - 1 );
+		add_action( 'do_feed_rss2', [ $this, 'disable_feeds' ], - 1 );
+		add_action( 'do_feed_atom', [ $this, 'disable_feeds' ], - 1 );
+
+		// disable comment feeds (optional)
+		add_action( 'do_feed_rss2_comments', [ $this, 'disable_feeds' ], - 1 );
+		add_action( 'do_feed_atom_comments', [ $this, 'disable_feeds' ], - 1 );
+
+		// prevent feed links in page <head>
+		add_action( 'feed_links_show_posts_feed', '__return_false', - 1 );
+		add_action( 'feed_links_show_comments_feed', '__return_false', - 1 );
+		remove_action( 'wp_head', 'feed_links', 2 );
+		remove_action( 'wp_head', 'feed_links_extra', 3 );
+
+		// remove unnecessary WP links
+		remove_action( 'wp_head', 'wp_shortlink_wp_head', 10, 0 );
+		remove_action( 'wp_head', 'rsd_link' );
+		remove_action( 'wp_head', 'wlwmanifest_link' );
+		remove_action( 'wp_head', 'wp_generator' );
+		remove_action( 'wp_head', 'start_post_rel_link' );
+		remove_action( 'wp_head', 'wp_oembed_add_discovery_links', 10 );
+		remove_action( 'wp_head', 'wp_oembed_add_host_js' );
+		remove_action( 'rest_api_init', 'wp_oembed_register_route' );
+		remove_filter( 'oembed_dataparse', 'wp_filter_oembed_result' );
+		remove_action( 'wp_head', 'index_rel_link' );
+		remove_action( 'wp_head', 'adjacent_posts_rel_link' );
+		remove_action( 'template_redirect', 'rest_output_link_header', 11, 0 );
+		remove_action( 'wp_head', 'rest_output_link_wp_head', 10 );
+		add_filter( 'xmlrpc_enabled', '__return_false' );
 
 		parent::__construct();
 	}
@@ -117,11 +154,19 @@ class StarterSite extends Site {
 	}
 
 	public function assets() {
+		wp_dequeue_style( 'wp-block-library' );
+		wp_dequeue_style( 'global-styles' );
+
 		// Scripts
 		wp_enqueue_script( 'gsap', 'https://unpkg.co/gsap@3/dist/gsap.min.js' );
 		wp_enqueue_script( 'gsap-scrolltrigger', 'https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js' );
 		wp_enqueue_script( 'gsap-scrollto', 'https://unpkg.com/gsap@3/dist/ScrollToPlugin.min.js' );
-		wp_enqueue_script( 'gigaverse-main', get_theme_file_uri( '/public/js/main.js' ), [ 'jquery','gsap', 'gsap-scrolltrigger', 'gsap-scrollto' ], false, true );
+		wp_enqueue_script( 'gigaverse-main', get_theme_file_uri( '/public/js/main.js' ), [
+			'jquery',
+			'gsap',
+			'gsap-scrolltrigger',
+			'gsap-scrollto'
+		], false, true );
 
 		// Styles
 		wp_enqueue_style( 'gigaverse-app', get_theme_file_uri( '/public/css/app.css' ) );
@@ -154,5 +199,10 @@ class StarterSite extends Site {
 			color:rgba(0, 0, 0, 0);
 		}
 	</style>';
+	}
+
+	public function disable_feeds() {
+		wp_redirect( home_url(), 301 );
+		die;
 	}
 }
