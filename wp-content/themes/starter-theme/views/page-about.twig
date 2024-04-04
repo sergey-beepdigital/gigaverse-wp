@@ -42,7 +42,7 @@
                                     <img src="{{ member.thumbnail.src }}"/>
                                     <div class="name text24 bold pt-2">{{ member.title }}</div>
                                     <div class="role text16 pt-1">{{ member.member_job_title }}</div>
-                                    <div class="category">{{ member.terms('gv_team_group') | join(', ') }}</div>
+                                    {#<div class="category">{{ member.terms('gv_team_group') | join(', ') }}</div>#}
                                 </div>
 
                             {% endfor %}
