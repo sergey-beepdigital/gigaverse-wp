@@ -208,7 +208,6 @@
                 })
             })
             return () => {
-                console.log('kill');
                 tl.kill();
                 pinner.kill();
             };
