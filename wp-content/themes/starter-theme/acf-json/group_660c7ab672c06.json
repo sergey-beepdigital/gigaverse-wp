@@ -4,7 +4,7 @@
     "fields": [
         {
             "key": "field_660c7ab61e0f6",
-            "label": "Wishlist",
+            "label": "Waitlist",
             "name": "",
             "aria-label": "",
             "type": "tab",
@@ -183,5 +183,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1712227515
+    "modified": 1712230158
 }
