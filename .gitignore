@@ -44,3 +44,6 @@ Thumbs.db
 *.app
 *.exe
 *.war
+
+wp-content/plugins/*
+!wp-content/plugins/advanced-custom-fields-pro/
