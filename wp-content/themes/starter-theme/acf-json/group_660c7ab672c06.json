@@ -4,7 +4,7 @@
     "fields": [
         {
             "key": "field_660c7ab61e0f6",
-            "label": "Global",
+            "label": "Wishlist",
             "name": "",
             "aria-label": "",
             "type": "tab",
@@ -20,11 +20,11 @@
             "endpoint": 0
         },
         {
-            "key": "field_660c7add1e0f7",
-            "label": "About Page",
-            "name": "about_page",
+            "key": "field_660e8485d2b9a",
+            "label": "Title",
+            "name": "wishlist_section_title",
             "aria-label": "",
-            "type": "post_object",
+            "type": "text",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -33,24 +33,18 @@
                 "class": "",
                 "id": ""
             },
-            "post_type": [
-                "page"
-            ],
-            "post_status": "",
-            "taxonomy": "",
-            "return_format": "id",
-            "multiple": 0,
-            "allow_null": 0,
-            "bidirectional": 0,
-            "ui": 1,
-            "bidirectional_target": []
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
         },
         {
-            "key": "field_660c7af51e0f8",
-            "label": "Privacy Policy Page",
-            "name": "privacy_page",
+            "key": "field_660e84aad2b9b",
+            "label": "Subtitle",
+            "name": "wishlist_section_subtitle",
             "aria-label": "",
-            "type": "post_object",
+            "type": "text",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -59,43 +53,11 @@
                 "class": "",
                 "id": ""
             },
-            "post_type": [
-                "page"
-            ],
-            "post_status": "",
-            "taxonomy": "",
-            "return_format": "id",
-            "multiple": 0,
-            "allow_null": 0,
-            "bidirectional": 0,
-            "ui": 1,
-            "bidirectional_target": []
-        },
-        {
-            "key": "field_660c7b0e1e0f9",
-            "label": "TOC Page",
-            "name": "toc_page",
-            "aria-label": "",
-            "type": "post_object",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "post_type": [
-                "page"
-            ],
-            "post_status": "",
-            "taxonomy": "",
-            "return_format": "id",
-            "multiple": 0,
-            "allow_null": 0,
-            "bidirectional": 0,
-            "ui": 1,
-            "bidirectional_target": []
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
         },
         {
             "key": "field_660d36ca43ce3",
@@ -221,5 +183,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1712142114
+    "modified": 1712227515
 }
