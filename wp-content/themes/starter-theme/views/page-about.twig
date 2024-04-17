@@ -39,7 +39,7 @@
                             {% for member in team_list %}
 
                                 <div class="team-member {{ member.terms('gv_team_group') | join(' ') | lower }}">
-                                    <img src="{{ member.thumbnail.src }}"/>
+                                    <img src="{{ member.thumbnail.src | resize(300,300,'center') }}"  alt="{{ member.thumbnail.alt }}" />
                                     <div class="name text24 bold pt-2">{{ member.title }}</div>
                                     <div class="role text16 pt-1">{{ member.member_job_title }}</div>
                                     {#<div class="category">{{ member.terms('gv_team_group') | join(', ') }}</div>#}
