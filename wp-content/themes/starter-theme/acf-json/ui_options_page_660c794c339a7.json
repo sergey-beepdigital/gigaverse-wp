@@ -1,0 +1,22 @@
+{
+    "key": "ui_options_page_660c794c339a7",
+    "title": "Website Settings",
+    "active": true,
+    "menu_order": 0,
+    "page_title": "Website Settings",
+    "menu_slug": "website-settings",
+    "parent_slug": "none",
+    "advanced_configuration": 0,
+    "icon_url": "",
+    "menu_title": "",
+    "position": "",
+    "redirect": 0,
+    "description": "",
+    "update_button": "Update",
+    "updated_message": "Options Updated",
+    "capability": "edit_posts",
+    "data_storage": "options",
+    "post_id": "",
+    "autoload": 0,
+    "modified": 1712093525
+}

@@ -1,0 +1,67 @@
+{% extends "base.twig" %}
+
+{% block content %}
+
+    <div class="minheight">
+        <div class="image_const">
+            <img class="mobilebg" src="{{ theme.uri }}/public/images/header_bg_mobile.png">
+            <img class="desktopbg " src="{{ theme.uri }}/public/images/header_bg_desktop.jpg">
+
+            {% include 'partial/header.twig' %}
+
+            <section class="header_images">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12  text-center pt-10 md-pt-22">
+                            <h1 class="text80 black">{{ post.page_title }}</h1>
+                        </div>
+                        {% if post.page_subtitle %}
+                            <div class="col-12 col-lg-10 offset-lg-1 text-center text32 pt-5 md-pt-8 pb-10 md-pb-20">{{ post.page_subtitle }}</div>
+                        {% endif %}
+                    </div>
+                </div>
+            </section>
+        </div>
+        {% if team_categories %}
+            <div id="filters" class="button-group">  <a class="button is-checked" data-filter="*">All</a>
+                {% for cat in team_categories %}
+                <br>
+                <a class="button" data-filter=".{{ cat.slug }}">{{ cat.name }}</a>
+                {% endfor %}
+            </div>
+        {% endif %}
+        {% if team_list %}
+            <div class="container nopad">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="team-members">
+
+                            {% for member in team_list %}
+
+                                <div class="team-member {{ member.terms('gv_team_group') | join(' ') | lower }}">
+                                    <img src="{{ member.thumbnail.src | resize(300,300,'center') }}"  alt="{{ member.thumbnail.alt }}" />
+                                    <div class="name text24 bold pt-2">{{ member.title }}</div>
+                                    <div class="role text16 pt-1">{{ member.member_job_title }}</div>
+                                    {#<div class="category">{{ member.terms('gv_team_group') | join(', ') }}</div>#}
+                                </div>
+
+                            {% endfor %}
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        {% endif %}
+
+        {% include 'partial/investors.twig' %}
+
+        <div class="topscroll"></div>
+    </div>
+
+    {% include 'partial/footer.twig' with {
+        css_class : 'pt-20 relative',
+        center: true
+    } %}
+
+{% endblock %}

@@ -1,0 +1,152 @@
+
+
+a {
+    color:$primary-blue-500;
+    &:hover {
+        color: $primary-blue-600;
+    }
+}
+.text16{
+    font-size: 16px;
+    line-height: 18px; /* 140% */
+}
+
+.text20{
+    font-size: 20px;
+    line-height: 28px; /* 140% */
+}
+
+.text22 {
+    font-size: 22px;
+    line-height: 28px; /* 140% */
+}
+
+.text24{
+    font-size: 24px;
+    line-height: 30px; /* 125% */
+    letter-spacing: -0.5px;
+    @media screen and (max-width: 900px) {
+        font-size: 20px;
+        line-height: 28px;
+    }
+}
+
+.text28 {
+    font-size: 28px;
+    line-height: 36px;
+    font-weight: 400;
+    line-height: 36px;
+    @media screen and (max-width: 900px) {
+        font-size: 22px;
+        line-height: 29px;
+    }
+}
+
+.text30 {
+    font-size: 30px;
+    line-height: 36px; /* 120% */
+    letter-spacing: -0.6px;
+    @media screen and (max-width: 900px) {
+        font-size: 24px;
+        line-height: 30px;
+    }
+}
+
+
+.text32 {
+    font-size: 32px;
+    line-height: 36px; /* 120% */
+    letter-spacing: -0.6px;
+    @media screen and (max-width: 900px) {
+        font-size: 24px;
+        line-height: 30px;
+    }
+}
+.text36 {
+    font-size: 36px;
+    line-height: 40px; /* 111.111% */
+    letter-spacing: -0.7px;
+    @media screen and (max-width: 900px) {
+        font-size: 30px;
+        line-height: 36px;
+    }
+}
+
+.text40 {
+    font-size: 40px;
+    line-height: 44px;
+    letter-spacing: -1px;
+    @media screen and (max-width: 900px) {
+        font-size: 26px;
+        line-height: 36px;
+    }
+}
+
+.text45 {
+    font-size: 45px;
+    line-height: 49px;
+    letter-spacing: -1px;
+    @media screen and (max-width: 900px) {
+        font-size: 28px;
+        line-height: 36px;
+    }
+}
+
+.text48 {
+    font-size: 48px;
+    line-height: 52px; 
+    letter-spacing: -1px;
+    @media screen and (max-width: 900px) {
+        font-size: 36px;
+        line-height: 40px;
+    }
+}
+
+.text54 {
+    font-size: 54px;
+    line-height: 60px; 
+    letter-spacing: -1px;
+    @media screen and (max-width: 900px) {
+        font-size: 33px;
+        line-height: 38px;
+    }
+}
+
+
+.text80 {
+    font-size: 80px;
+    line-height: 80px; 
+    letter-spacing: -1px;
+    @media screen and (max-width: 900px) {
+        font-size: 52px;
+        line-height: 58px;
+    }
+}
+
+.text-center {
+    text-align: center;
+}
+.medium {
+    font-weight: 500;
+}
+.bold {
+    font-weight: bold;
+}
+.black {
+    font-weight: 900;
+}
+.tagline {
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 22px; /* 157.143% */
+    text-transform: uppercase;
+    color:  $text-darkbody;
+}
+.relative {
+    position: relative;
+}
+
+.giga-pink {
+    color: $gigaverse-pink;
+}

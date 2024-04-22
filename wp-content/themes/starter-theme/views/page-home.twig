@@ -1,0 +1,157 @@
+{% extends "base.twig" %}
+
+{% block content %}
+
+    <div class="image_const">
+        <img class="mobilebg" src="{{ theme.uri }}/public/images/header_bg_mobile.png">
+        <img class="desktopbg " src="{{ theme.uri }}/public/images/header_bg_desktop.jpg">
+
+        {% include 'partial/header.twig' %}
+
+        <section class="header_images">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12  text-center pt-10 md-pt-22">
+                        <h1 class="text80 black">{{ post.page_title }}</h1>
+                    </div>
+                    {% if post.page_subtitle %}
+                        <div class="col-12 text-center text32 pt-5 md-pt-8 pb-4 md-pb-20">{{ post.page_subtitle }}</div>
+                    {% endif %}
+                    <div class="col-12 md-pt-5">
+                        <div class="imageframe_parallax">
+                            <img class="base" src="{{ theme.uri }}/public/images/header_images_bg.png">
+                            <div class="col1 rellax" data-rellax-speed="1.5">
+                                <img alt="" class="col1a" src="{{ theme.uri }}/public/images/col_1_a.png">
+                                <img alt="" class="col1b" src="{{ theme.uri }}/public/images/col_1_b.png">
+                                <img alt="" class="col1c" src="{{ theme.uri }}/public/images/col_1_c.png">
+                            </div>
+                            <div class="col2 rellax" data-rellax-speed="1">
+                                <img alt="" class="  col2a" src="{{ theme.uri }}/public/images/col_2_a.png">
+                                <img alt="" class="  col2b" src="{{ theme.uri }}/public/images/col_2_b.png">
+                            </div>
+
+                            <div class="col3 rellax" data-rellax-speed="-0.5">
+                                <img alt="" class="  col3a" src="{{ theme.uri }}/public/images/col_3_a.png">
+                                <img alt="" class="  col3b" src="{{ theme.uri }}/public/images/col_3_b.png">
+                            </div>
+                            <div class="col4 rellax" data-rellax-speed="2.5">
+                                <img alt="" class="  col4a" src="{{ theme.uri }}/public/images/col_4_a.png">
+                                <img alt="" class="  col4b" src="{{ theme.uri }}/public/images/col_4_b.png">
+                            </div>
+                            <div class="col5 rellax" data-rellax-speed="-0.45">
+                                <img alt="" class="  col5a" src="{{ theme.uri }}/public/images/col_5_a.png">
+                                <img alt="" class="  col5b" src="{{ theme.uri }}/public/images/col_5_b.png">
+                            </div>
+                            <div class="col6 rellax" data-rellax-speed="2.5">
+                                <img alt="" class="  col6a" src="{{ theme.uri }}/public/images/col_6_a.png">
+                                <img alt="" class="  col6b" src="{{ theme.uri }}/public/images/col_6_b.png">
+                                <img alt="" class="  col6c" src="{{ theme.uri }}/public/images/col_6_c.png">
+                            </div>
+                            <div class="small_images">
+                                <img alt="" class="small_col1a rellax" data-rellax-speed="2" src="{{ theme.uri }}/public/images/small_col_1_a.png" />
+                                <img alt="" class="small_col2a rellax" data-rellax-speed="2" src="{{ theme.uri }}/public/images/small_col_2_a.png" />
+                                <img alt="" class="small_col2b rellax" data-rellax-speed="1" src="{{ theme.uri }}/public/images/small_col_2_b.png" />
+                                <img alt="" class="small_col3a rellax" data-rellax-speed="3" src="{{ theme.uri }}/public/images/small_col_3_a.png" />
+                                <img alt="" class="small_col3b rellax" data-rellax-speed="2" src="{{ theme.uri }}/public/images/small_col_5_a.png" />
+                                <img alt="" class="small_col4a rellax" data-rellax-speed="0.5" src="{{ theme.uri }}/public/images/small_col_4_a.png" />
+                                <img alt="" class="small_col4b rellax" data-rellax-speed="1" src="{{ theme.uri }}/public/images/small_col_4_b.png" />
+                                <img alt="" class="small_col5a rellax" data-rellax-speed="1.5" src="{{ theme.uri }}/public/images/small_col_3_b.png" />
+                                <img alt="" class="small_col5b rellax" data-rellax-speed="1.25" src="{{ theme.uri }}/public/images/small_col_5_b.png" />
+                                <img alt="" class="small_col6a rellax" data-rellax-speed="2.25" src="{{ theme.uri }}/public/images/small_col_6_a.png" />
+                                <img alt="" class="small_col6b rellax" data-rellax-speed="2.75" src="{{ theme.uri }}/public/images/small_col_6_b.png" />
+                                <img alt="" class="small_col7a rellax" data-rellax-speed="1.75" src="{{ theme.uri }}/public/images/small_col_7_a.png" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <section class="features">
+        <div class="container">
+            <div class="phone_bgs"></div>
+            <div class="indicators">
+                <div class="indicator"></div>
+                <div class="indicator"></div>
+                <div class="indicator"></div>
+                <div class="indicator"></div>
+                <div class="indicator"></div>
+            </div>
+            <div class="mobileslick">
+
+                {% for feature in post.home_features %}
+
+                    <div class="videoframe_vh">
+                        <div class="row">
+                            <div class="col-12 col-lg-10 offset-lg-1">
+                                <div class="row">
+                                    <div class="col-8 offset-2 offset-md-0 col-md-5">
+                                        <div class="videoframe">
+                                            <img src="{{ theme.uri }}/public/images/features_frame_bg.png" />
+                                            <video width="" height="" playsinline muted loop="true" autoplay="autoplay" data-lazy_video_url="{{ theme.uri }}/public/images/feature_{{ loop.index }}.mp4">
+                                                <source src="" type="video/mp4">
+                                            </video>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 mobiledots">
+                                        <div class="dots">
+                                            <div class="dot {{ loop.index == 1 ? 'active' : 'btnslide1' }}"></div>
+                                            <div class="dot {{ loop.index == 2 ? 'active' : 'btnslide2' }}"></div>
+                                            <div class="dot {{ loop.index == 3 ? 'active' : 'btnslide3' }}"></div>
+                                            <div class="dot {{ loop.index == 4 ? 'active' : 'btnslide4' }}"></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-md-6 offset-md-1 gasptext">
+                                        <article>
+                                            <p class="text54 pb-2 bold pt-0 pt-md-16 pt-lg-20">{{ feature.title }}</p>
+                                            <p class="text24">{{ feature.description }}</p>
+                                        </article>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                {% endfor %}
+
+            </div>
+            <div class="videoframe_vh">
+                <div class="row">
+                    <div class="col-12 col-lg-10 offset-lg-1 pt-20 pt-md-0">
+                        <div class="row ">
+                            <div class="col-8 offset-2 offset-md-0 col-md-5 mobile_form_hide">
+                                <div class="videoframe">
+                                    <img src="{{ theme.uri }}/public/images/features_frame_bg.png" />
+                                    <video class="waitlist" width="" height="" playsinline muted loop="true" autoplay="autoplay" data-lazy_video_url="{{ theme.uri }}/public/images/waitlist.mp4">
+                                        <source src="" type="video/mp4">
+                                    </video>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6 offset-md-1 gasptext" id="form">
+                                <article>
+                                    <p class="text54 pb-2 bold pt-10 pt-lg-20">{{ options.wishlist_section_title }}</p>
+                                    <p class="text24">{{ options.wishlist_section_subtitle }}</p>
+                                    <div class="form d-flex justify-content-center justify-content-md-start w-md-75 ">
+                                        <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/embed/v2.js"></script>
+                                        <script>
+                                            hbspt.forms.create({
+                                                region: "na1",
+                                                portalId: "45680825",
+                                                formId: "2c5c5b33-39ae-4413-84f9-3209e0483acc"
+                                            });
+                                        </script>
+
+                                    </div>
+                                </article>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="pagebase">
+        {% include 'partial/footer.twig' %}
+    </div>
+
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends "base.twig" %}
+
+{% block content %}
+	{% include 'partial/header.twig' with {
+		hide_menu : true
+	} %}
+
+	<section class="header_images darkbg">
+		<div class="container">
+			<div class="row">
+				<div class="col-12  text-center pt-10 md-pt-22">
+					<h1 class="text54 black">404</h1>
+				</div>
+				<div class="col-12 text-center pt-8 pb-16 md-pb-10">Sorry, we couldn't find what you're looking for.</div>
+				<div class="text-center"><a href="{{ site.url }}">Back to Homepage</a></div>
+			</div>
+		</div>
+	</section>
+{% endblock %}

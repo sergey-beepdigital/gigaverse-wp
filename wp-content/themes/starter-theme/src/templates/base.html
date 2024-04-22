@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <meta name="generator" content="Gigaverse"/>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="language" content="English" />
+        {% block html_head %}        
+        {% endblock %}
+        <meta property="og:site_name" content="Gigaverse" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://gigaverse.com/images/gigaverse_og_image.png" />
+        <link rel="stylesheet" href="css/app.css?gv1a" />
+        <meta name="robots" content="index, follow" />
+
+        <script src="https://unpkg.co/gsap@3/dist/gsap.min.js"></script>
+        <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
+        <script src="https://unpkg.com/gsap@3/dist/ScrollToPlugin.min.js"></script>
+    </head>
+    <body>
+        {% block content %}{% endblock %}
+        <script src="js/main.js?gv1a"></script>
+    </body>
+</html>

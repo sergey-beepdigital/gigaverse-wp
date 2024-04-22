@@ -1,0 +1,18 @@
+{% if options.investors_list %}
+    <div class="container">
+        {% if options.investors_section_title %}
+            <div class="row">
+                <div class="col-12 pt-20 pb-2 md-pb-10">
+                    <h2 class="text40 bold text-center pb-4">{{ options.investors_section_title }}</h2>
+                </div>
+            </div>
+        {% endif %}
+        <div class="row text-center">
+            <div class="col-12 logos">
+                {% for investor in options.investors_list %}
+                    <a target="_blank" href="{{ investor.url }}"><img src="{{ investor.image.url }}"/></a>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endif %}

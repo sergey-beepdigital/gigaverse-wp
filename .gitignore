@@ -1,5 +1,4 @@
 .idea
-assets
 .well-known
 
 # Node artifact files
@@ -46,10 +45,5 @@ Thumbs.db
 *.exe
 *.war
 
-# Large media files
-*.mp4
-*.tiff
-*.avi
-*.flv
-*.mov
-*.wmv
+wp-content/plugins/*
+!wp-content/plugins/advanced-custom-fields-pro/
