@@ -119,7 +119,8 @@
         slider[0].slick.slickGoTo(parseInt(3));
     });
     $(document).on('click', '.formbtn', function (event) {
-        event.preventDefault();
+        //event.preventDefault();
+
         if ($(window).width() < 768) {
             $('html, body').animate({
                 scrollTop: $("#form").offset().top
@@ -190,7 +191,7 @@
                 }
             });
             $(document).on('click', '.formbtn', function (event) {
-                event.preventDefault();
+                //event.preventDefault();
                 if ($(window).width() < 768) {
                 } else {
                     gsap.to(window, {
